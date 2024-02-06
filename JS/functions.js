@@ -2,6 +2,8 @@
 
 let rand_num1 = 0
 let rand_num2 = 0
+let oikea_vast = 0
+let vaara_vast = 0
 
 const getRandomIntNumberInRange = (min, max) => {
     return Math.floor(Math.random() * max) +min;
@@ -23,8 +25,12 @@ document.querySelector('button').addEventListener('click', () => {
     const correctAnswer = rand_num1 + rand_num2
     if (answer === correctAnswer) {
         alert('Correct!')
+        oikea_vast = +1
+        console.log(oikea_vast)
     } else {
         alert ('Incorrect!')
+        vaara_vast = +1
+        console.log(vaara_vast)
     }
 
     randomizeNumbers()
