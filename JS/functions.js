@@ -2,6 +2,7 @@
 
 let rand_num1 = 0
 let rand_num2 = 0
+
 let oikea_vast = 0
 let vaara_vast = 0
 
@@ -23,14 +24,17 @@ addEventListener("DOMContentLoaded",() => {
 document.querySelector('button').addEventListener('click', () => {
     const answer = Number(document.querySelector('input').value)
     const correctAnswer = rand_num1 + rand_num2
+    
     if (answer === correctAnswer) {
         alert('Correct!')
-        oikea_vast = +1
-        console.log(oikea_vast)
+        oikea_vast = oikea_vast +1
+        document.querySelector('#correct').innerHTML = oikea_vast
+        // console.log(oikea_vast)
     } else {
         alert ('Incorrect!')
-        vaara_vast = +1
-        console.log(vaara_vast)
+        vaara_vast = vaara_vast +1
+        document.querySelector('#incorrect').innerHTML = vaara_vast
+        // console.log(vaara_vast)
     }
 
     randomizeNumbers()
